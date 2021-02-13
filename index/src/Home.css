@@ -1,0 +1,27 @@
+.home1{font-size: 50px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(86, 90, 88, 0.966);
+    margin: 0px;}
+    .home2{
+       float:left;
+        height:700px;
+        width:1000px;
+        
+    }
+    .home3{
+        float:right;
+        height:600px;
+        width:900px;
+        margin-top: 50px;
+    }
+    .home4{
+        border: 2px solid black;
+    color:black;
+    margin-left: 47%;
+   font-size:30px;
+    padding: 4px 3px 4px 3px;
+    font-weight: bold;
+    border-radius: 5px;;
+    }
