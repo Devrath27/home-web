@@ -17,11 +17,13 @@ a:hover{
 }
 .e2{
     border:10px solid rgb(1, 1, 31);
-    width:32%;
-   margin-left: 20px;
+   width:20%;
+   padding: auto;
    border-radius: 50px;
    float: left;
-    height:500px;
+    
+    
+    height: 300px;
     margin-top: 100px;
     display: flex;
     flex-wrap: wrap;

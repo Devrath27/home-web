@@ -1,14 +1,15 @@
 import React from 'react'
-
-class Getservice extends React.Component{
+import Login from './Login.css';
+class Signupw extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            serviceType:'',
-            problem: '',
-            location:'',
-            image: '',
-            
+            name:'',
+            email: '',
+            cityName:'',
+            contact: null,
+            password: '',
+           
                     };
                     this.myChangeHandler=this.myChangeHandler.bind(this);
                     this.mySubmitHandler=this.mySubmitHandler.bind(this);
@@ -20,7 +21,7 @@ class Getservice extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        alert("Hello" )
+        alert("Hello")
         console.log(this.state);
     }
 
@@ -28,37 +29,45 @@ class Getservice extends React.Component{
         return( 
             
            <form onSubmit={this.mySubmitHandler} style={{textAlign:"center"}}>
-               <h1>get service...</h1>
+               <h1>enter the details</h1>
                <table style={{marginLeft:"auto",marginRight:"auto"}}>
 
               <tr>
-              <td><span>service type</span></td>
-               <td><input type='text' name='serviceType'
+              <td><span>name</span></td>
+               <td><input type='text' name='name'
                onChange={this.myChangeHandler}
                /></td>
               </tr>
               <tr>
-                  <td><span>problem</span></td>
-                  <td> <input type='text' name='problem'
+                  <td><span>email</span></td>
+                  <td> <input type='text' name='email'
+               onChange={this.myChangeHandler}
+               /></td>
+              </tr>
+              <tr>
+                  <td><span>City Name</span></td>
+                  <td> <input type='location' name='cityName'
                onChange={this.myChangeHandler}
                /></td>
               </tr>
                
                <tr>
-                   <td><span>insert image</span></td>
-                   <td><input type='file' name='image'
+                   <td><span>contact no.</span></td>
+                   <td><input type='text' name='contact'
                onChange={this.myChangeHandler}
                /></td>
                </tr>
-               <tr>
-                   <td><span>Enter location:</span></td>
-                   <td><input type='location' name='location'
+              
+              <tr>
+                  <td><span>password</span></td>
+                  <td><input type='password' name='password'
                onChange={this.myChangeHandler}
                /></td>
-               </tr>
+              </tr>
+               
                
               
-              
+
                </table>
                <br/>
                
@@ -69,4 +78,4 @@ class Getservice extends React.Component{
         
     }
 }
-export default Getservice;
+export default Signupw;

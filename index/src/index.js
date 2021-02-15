@@ -7,9 +7,12 @@ import Home from './Home';
 import { BrowserRouter } from 'react-router-dom';
 import {Route, Switch} from "react-router-dom";
 import Service from './Service';
-import Login from './Login';
-import Signup from './Signup';
+import Logincust from './Logincust';
+import Loginw from './Loginw';
+import Signupw from './Signupw';
+import Signupcust from './Signupcust';
 import Getservice from './Getservice';
+import Loginpg from './Loginpg';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -19,8 +22,11 @@ ReactDOM.render(
    <Switch>
      <Route exact path="/" component={App,Nav,Home}/>
      <Route exact path="/Service" component={Service}/>
-     <Route exact path="/Login" component={Login}/>
-     <Route path="/Signup" component={Signup}/>
+     <Route path="/Logincust" component={Logincust}/>
+     <Route path="/Loginw" component={Loginw}/>
+     <Route exact path="/loginpg" component={Loginpg}/>
+     <Route path="/Signupw" component={Signupw}/>
+     <Route path="/Signupcust" component={Signupcust}/>
      <Route path="/get_service" component={Getservice}/>
    </Switch>
    

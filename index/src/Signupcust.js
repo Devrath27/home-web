@@ -1,6 +1,6 @@
 import React from 'react'
 import Login from './Login.css';
-class Signup extends React.Component{
+class Signupcust extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -66,7 +66,6 @@ class Signup extends React.Component{
               </tr>
                
                
-               9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
               
 
                </table>
@@ -79,4 +78,4 @@ class Signup extends React.Component{
         
     }
 }
-export default Signup;
+export default Signupcust;
