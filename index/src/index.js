@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import App1 from './App1';
 import Nav from './Nav';
 import Home from './Home';
 import { BrowserRouter } from 'react-router-dom';
@@ -21,7 +22,7 @@ ReactDOM.render(
    
    <Switch>
      <Route exact path="/" component={App,Nav,Home}/>
-     <Route exact path="/Service" component={Service}/>
+     <Route exact path="/Service" component={App1}/>
      <Route path="/Logincust" component={Logincust}/>
      <Route path="/Loginw" component={Loginw}/>
      <Route exact path="/loginpg" component={Loginpg}/>
