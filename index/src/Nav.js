@@ -26,7 +26,7 @@ function Nav() {
     <Link class="nav-link" to="/Contact">contact us</Link>
   </li>
   <li class="nav-item">
-    <Link class="nav-link" to="/Login">Login</Link>
+    <Link class="nav-link" to="/loginpg">Login</Link>
   </li>
 </ul>
 

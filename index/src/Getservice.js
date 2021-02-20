@@ -10,6 +10,8 @@ class Getservice extends React.Component{
             image: '',
             
                     };
+                    this.myChangeHandler=this.myChangeHandler.bind(this);
+                    this.mySubmitHandler=this.mySubmitHandler.bind(this);
     }
     myChangeHandler=(event) =>{
         let num=event.target.name;
@@ -18,8 +20,10 @@ class Getservice extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        alert("Hello" )
+        
+        console.log(this.state);
     }
+    
 
     render(){
         return( 
@@ -30,9 +34,20 @@ class Getservice extends React.Component{
 
               <tr>
               <td><span>service type</span></td>
-               <td><input type='text' name='serviceType'
-               onChange={this.myChangeHandler}
-               /></td>
+               <tr>
+                   
+                   <td><select  name='serviceType'  onChange={this.myChangeHandler}>
+                   <option value="c">c</option>
+                   <option value="e">e</option>
+                   <option value="s">s</option>
+                   <option value ="m">m</option>
+                   <option value ="ce">ce</option>
+                   <option value ="arci">arci</option>
+                   <option value ="pcm">pcm</option>
+                   <option value ="others">others</option>
+               </select>
+               </td>
+               </tr>
               </tr>
               <tr>
                   <td><span>problem</span></td>

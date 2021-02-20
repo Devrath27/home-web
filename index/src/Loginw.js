@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {BrowserRouter} from 'react-router-dom'; 
 import {Route, Switch} from "react-router-dom";
 
-class Login extends React.Component{
+class Loginw extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -63,21 +63,13 @@ class Login extends React.Component{
            
            </form>
            <p>if you are new user please signup first</p>
-           <Link to="/Signup">Signup</Link>
+           <Link to="/Signupw">Signup</Link>
            </div>
         );
         
     }
 }
-export default Login;
+export default Loginw;
 
 
 
-// function Login() {
-//   return (
-   
-//     <p>login form</p>
-//   );
-// }
-
-// export default Login;
