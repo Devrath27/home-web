@@ -1,0 +1,41 @@
+.form2{
+    width:375px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    margin-top:45px;
+   border:1px solid grey;
+   
+margin-bottom: 20px;
+    
+
+}
+.input{
+    display: block;
+    margin-left: 20px;
+    margin-top:30px;
+    margin-right:20px;
+    line-height: 2.5;
+    
+}
+.input input{
+    border:none;
+    border-bottom: 2px solid red;
+
+    width:100%;
+    border-radius:5px;
+}
+.input input:focus {
+    outline:none;
+    }
+.para1{
+    margin-left:20px;
+    margin-top: 40px;
+    text-align: center;
+}
+ .input .Signupcust{
+    background-color: green;
+    border:none;
+    color:white;
+}
+

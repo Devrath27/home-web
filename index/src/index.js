@@ -1,34 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import App1 from './App1';
-import Nav from './Nav';
-import Home from './Home';
+import App from './component/App';
+import Nav from './component/Nav';
+import Home from './component/Home';
+import Header from './component/Header';
+import services from './component/services';
 import { BrowserRouter } from 'react-router-dom';
 import {Route, Switch} from "react-router-dom";
-import Service from './Service';
-import Logincust from './Logincust';
-import Loginw from './Loginw';
-import Signupw from './Signupw';
-import Signupcust from './Signupcust';
-import Getservice from './Getservice';
-import Loginpg from './Loginpg';
+import Logincust from './component/Logincust';
+import Loginworker from './component/Loginworker';
+import Signupworker from './component/Signupworker';
+import Signupcust from './component/Signupcust';
+import Getservice from './component/Getservice';
+import Loginpg from './component/Loginpg';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
-    <Nav />
+  
+    <Nav/>
+    
    
    <Switch>
-     <Route exact path="/" component={App,Nav,Home}/>
-     <Route exact path="/Service" component={App1}/>
+     <Route exact path="/" component={Home}/>
+     <Route exact path="/services" component={services}/>
      <Route path="/Logincust" component={Logincust}/>
-     <Route path="/Loginw" component={Loginw}/>
-     <Route exact path="/loginpg" component={Loginpg}/>
-     <Route path="/Signupw" component={Signupw}/>
+     <Route path="/Loginworker" component={Loginworker}/>
+     <Route exact path="/login" component={Loginpg}/>
+     <Route path="/Signupworker" component={Signupworker}/>
      <Route path="/Signupcust" component={Signupcust}/>
      <Route path="/get_service" component={Getservice}/>
+     <Route exact path="/seemore" component={services}/>
    </Switch>
    
     </BrowserRouter>
