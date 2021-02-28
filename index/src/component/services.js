@@ -1,21 +1,23 @@
 import React,{Component} from "react";
-import electrical from "./elect.png";
-import carpenter from "./carp.jpg";
-import mechanics from "./vmec.jpg";
-import vwas from "./vwas.png";
-import './service.css';
-import cleaner from './clean.jpg';
-import barber from './barber.jpg';
-import doctor from './doctor.jpg';
-import rentcar from './rent car.jpg';
-import mason from './mason.jpg';
-import photographer from './photographer.jpg';
-import painter from './painter.jpg';
-import plumber from './plumber.jpg';
-import laundary from './laundary.jpg';
-import gardener from './gardener.jpg';
-import tv from './tv.jpg';
-import cctv from './cctv.jpg';
+import Header from "./Header";
+
+import electrical from "../images/elect.png";
+import carpenter from "../images/carp.jpg";
+import mechanics from "../images/vmec.jpg";
+import vwas from "../images/vwas.png";
+import './services.css';
+import cleaner from '../images/clean.jpg';
+import barber from '../images/barber.jpg';
+import doctor from '../images/doctor.jpg';
+import rentcar from '../images/rent car.jpg';
+import mason from '../images/mason.jpg';
+import photographer from '../images/photographer.jpg';
+import painter from '../images/painter.jpg';
+import plumber from '../images/plumber.jpg';
+import laundary from '../images/laundary.jpg';
+import gardener from '../images/gardener.jpg';
+import tv from '../images/tv.jpg';
+import cctv from '../images/cctv.jpg';
 //import "./barber.css";
 import {
     Card,
@@ -32,8 +34,10 @@ import {
 } from "reactstrap";
 const Services=()=>{
     return(
+    <div>
+        <Header/>
         <div className="ser">
-            
+     
 <Row>
     <Col md={3}>
 <card className="card" >
@@ -375,6 +379,7 @@ const Services=()=>{
 
 </Row>
 
+</div>
 </div>
     );
 }

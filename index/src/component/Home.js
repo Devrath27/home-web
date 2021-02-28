@@ -1,23 +1,24 @@
-import React from "react";
-import {Jumbotron,Container,Button} from "reactstrap";
-const Home=()=>{
-return(
-    <div>
-        <Jumbotron className="text-center">
-            <h1>Services 4U</h1>
-            <p>
-            This is the platform where you will get all the home delivery services at satisfactory cost.<br></br>
-            Thank you!.
-            </p>
-        
-        <Container>
-            <Button color="primary" outline >Welcome 
-            </Button>
-        </Container>
-        </Jumbotron>
-    </div>
-);
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Link} from "react-router-dom";
+import {BrowserRouter} from 'react-router-dom'; 
+import {Route, Switch} from "react-router-dom";
+import Header from "./Header";
+import Nav from "./Nav";
+import App from "./App";
+import Body from "./Body";
 
 
+
+function Home() {
+  return (
+    <div> 
+      <Header/>
+      <Body/>
+  
+  </div>
+
+  );
 }
-export default Home;
+  export default Home;
