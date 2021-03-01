@@ -48,11 +48,20 @@ class Signupworker extends React.Component{
                <div class="input"><input type='text' name='cityName' placeholder="city" 
                onChange={this.myChangeHandler}></input>
                </div>
-               <div class="input"><input type='text' name='jobType' placeholder="service name" 
-               onChange={this.myChangeHandler}></input>
+               <div class="input"><input list="services" name='jobType' placeholder="service name"/>  
+
+               <datalist id="services">
+    <option value="Electrical"/>
+    <option value="Mechanics"/>
+    <option value="Barber"/>
+    <option value="Doctor"/>
+    <option value="Laundary"/>
+  </datalist>
+  
+            
                </div>
                        <div class="input"><input type='email' name='email' placeholder="Email" 
-               onChange={this.myChangeHandler}></input>
+               onChange={this.myChangeHandler} ></input>
                </div>
                <div class="input"><input type='password' name='password' placeholder="Password"            
                 onChange={this.myChangeHandler}
