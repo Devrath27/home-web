@@ -1,19 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import App1 from './App1';
-import Nav from './Nav';
-import Home from './Home';
+import App from './component/App';
+
+import Nav from './component/Nav';
+import Home from './component/Home';
 import { BrowserRouter } from 'react-router-dom';
 import {Route, Switch} from "react-router-dom";
-import Service from './Service';
-import Logincust from './Logincust';
-import Loginw from './Loginw';
-import Signupw from './Signupw';
-import Signupcust from './Signupcust';
-import Getservice from './Getservice';
-import Loginpg from './Loginpg';
+
+import Logincust from './component/Logincust';
+import Loginw from './component/Loginw';
+import Signupw from './component/Signupw';
+import Signupcust from './component/Signupcust';
+import Getservice from './component/Getservice';
+import Loginpg from './component/Loginpg';
+import Account from './component/Account';
+import Profile from './component/Profile';
+import Logout from './component/Logout';
+import Mybooking from './component/Mybooking';
+import services from  './component/services'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -22,13 +27,17 @@ ReactDOM.render(
    
    <Switch>
      <Route exact path="/" component={App,Nav,Home}/>
-     <Route exact path="/Service" component={App1}/>
+     <Route exact path="/Service" component={services}/>
      <Route path="/Logincust" component={Logincust}/>
-     <Route path="/Loginw" component={Loginw}/>
+     <Route path="/Loginworker" component={Loginw}/>
      <Route exact path="/loginpg" component={Loginpg}/>
-     <Route path="/Signupw" component={Signupw}/>
+     <Route exact path="/Account" component={Account}/>
+     <Route exact path="/Signupworker" component={Signupw}/>
      <Route path="/Signupcust" component={Signupcust}/>
      <Route path="/get_service" component={Getservice}/>
+     <Route path="/Profile" component={Profile}/>
+     <Route path="/Logout" component={Logout}/>
+     <Route path="/mybookings" component={Mybooking}/>
    </Switch>
    
     </BrowserRouter>

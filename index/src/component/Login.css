@@ -1,0 +1,22 @@
+.login{
+    margin-top:50px;
+    margin-left:15px;
+    display:inline-block;
+    margin-right:200px;
+    width:600px;
+
+}
+.body{
+    color:white;
+
+}
+.body:hover{
+color:white;
+}
+.body2{
+    color:rgb(30, 228, 30);
+    font-weight: bold;
+}
+.para{
+    margin-top:25px;
+}

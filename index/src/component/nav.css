@@ -1,0 +1,29 @@
+.nav-item{
+    margin-right: 55px;
+    display:inline;
+    
+}
+   
+
+    
+
+.nav-link{
+    color:white;
+    font-weight: bold;
+}
+.nav-link:hover{
+  border: 2px solid white;
+  border-radius: 5px;
+  color:white;
+  padding: auto;
+}
+.navbg{
+    background-color:#005469;
+    position:sticky;
+    top:0;
+    z-index:1;
+}
+.app{
+    margin-right:30px;
+    color:#c0e218;
+}
