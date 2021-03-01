@@ -25,7 +25,7 @@ class Logincust extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        alert("Hello" )
+       
         //console.log(this.state);
 
         var logincust ={
@@ -53,6 +53,7 @@ class Logincust extends React.Component{
        sessionStorage.setItem("Email",json.prof);
        console.log(sessionStorage.Email);
        sessionStorage.setItem("job","custm");
+       alert("yoy are login successfully...");
        }
        else
        alert(json.prof);

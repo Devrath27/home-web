@@ -44,7 +44,7 @@ class Signupw extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        alert("Hello")
+       
         console.log(this.state);
 
 
@@ -80,6 +80,7 @@ class Signupw extends React.Component{
        sessionStorage.setItem("Email",json.prof);
        console.log(sessionStorage.Email);
        sessionStorage.setItem("job","worker");
+       alert("you are resistred successfully...")
        }
        else
        alert(json.prof);

@@ -10,6 +10,7 @@ class Logout extends React.Component{
     }
     get=(event)=>{
         sessionStorage.removeItem("Email");
+        
     }
     render(){
 return(

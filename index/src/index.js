@@ -22,11 +22,12 @@ import services from  './component/services'
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <App />
-    <Nav />
+  
+    <Nav/>
+    
    
    <Switch>
-     <Route exact path="/" component={App,Nav,Home}/>
+     <Route exact path="/" component={Home}/>
      <Route exact path="/Service" component={services}/>
      <Route path="/Logincust" component={Logincust}/>
      <Route path="/Loginworker" component={Loginw}/>
