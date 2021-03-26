@@ -8,11 +8,31 @@ class Getservice extends React.Component{
             problem: '',
             location:'',
             image: '',
+            latitude:'',
+            longitude:''
             
                     };
                     this.myChangeHandler=this.myChangeHandler.bind(this);
                     this.mySubmitHandler=this.mySubmitHandler.bind(this);
+                    this.getAddress=this.getAddress.bind(this);
+                    this.showPosition=this.showPosition.bind(this);
+                    this.getAddress();
+                    
     }
+    getAddress(){
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(this.showPosition);
+        }
+        return;
+      }
+      showPosition(position){
+       var latitude=position.coords.latitude;
+       var longitude= position.coords.longitude;
+        this.setState({latitude :latitude });
+            this.setState({longitude :longitude});
+            
+         
+      }
     myChangeHandler=(event) =>{
         let num=event.target.name;
         let val=event.target.value;
@@ -20,12 +40,58 @@ class Getservice extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        
+        var email=sessionStorage.Email;
         console.log(this.state);
+        var mybook ={
+            email:email,
+            serviceType : this.state.serviceType,
+            problem : this.state.problem,
+             location:this.state.location,
+            image:this.state.image,
+            latitude:this.state.latitude,
+            longitude:this.state.longitude
+            
+    
+          };
+          console.log(mybook);
+
+          fetch('http://localhost:8080/get_service', {
+          method: 'post',
+          body : JSON.stringify({
+            mybook
+          }),
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          }
+        }).then((res) => res.json())
+     .then((json) => {
+       alert(json.respond);
+       sessionStorage.setItem("bookboy",json.bookboy);
+       sessionStorage.setItem("bookmob",json.bookmob);
+       sessionStorage.setItem("mybooks",mybook);
+       
+     })
+     .catch((error) => {
+       console.error(error);
+     });
+        
     }
     
 
     render(){
+      var prof=sessionStorage.Email;
+       
+       console.log(prof);
+        if(!prof)
+        {  
+            return(
+                <div>
+                    <h1>please login first.........</h1>
+                </div>
+            )
+        }
+        else{
         return( 
             
            <form onSubmit={this.mySubmitHandler} style={{textAlign:"center"}}>
@@ -37,9 +103,9 @@ class Getservice extends React.Component{
                <tr>
                    
                    <td><select  name='serviceType'  onChange={this.myChangeHandler}>
-                   <option value="c">c</option>
-                   <option value="e">e</option>
-                   <option value="s">s</option>
+                   <option value="doctor">doctor</option>
+                   <option value="barber">barber</option>
+                   <option value="elecrician">electrician</option>
                    <option value ="m">m</option>
                    <option value ="ce">ce</option>
                    <option value ="arci">arci</option>
@@ -79,6 +145,6 @@ class Getservice extends React.Component{
            </form>
         );
         
-    }
+    }}
 }
 export default Getservice;

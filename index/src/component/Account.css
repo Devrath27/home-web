@@ -1,0 +1,31 @@
+.ll{
+    text-decoration: none;
+    color:white;
+    padding: 2px 0px 2px 0px;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 5px;
+}
+.al1{
+    text-decoration: none;
+    color:white; 
+    margin-left: 10px;
+    width:200;
+  margin-top: 50px;
+  
+    
+
+}
+.al1:hover{
+    color: black;
+    background-color: burlywood;
+ border: 2px solid burlywood;
+    border-radius: 10px; 
+    padding: 4px 0px 4px 5px;
+    text-decoration: none;
+}
+.s1{
+    height: 800px;
+      width:400;
+    background-color:#005469;
+}

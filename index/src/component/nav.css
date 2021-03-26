@@ -12,7 +12,10 @@
     font-weight: bold;
 }
 .nav-link:hover{
-    color:black;
+  border: 2px solid white;
+  border-radius: 5px;
+  color:white;
+  padding: auto;
 }
 .navbg{
     background-color:#005469;

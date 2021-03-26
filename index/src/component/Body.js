@@ -112,7 +112,7 @@ return(
 </Col>
 </Row>
 <Container className="text-center">
-<Link  className="button" to="/Services" style={{textDecoration:"none" }} >
+<Link  className="button" to="/Service" style={{textDecoration:"none" }} >
         <Button color="info" outline className="but" >
         See more
         </Button>
