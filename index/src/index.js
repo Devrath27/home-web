@@ -9,8 +9,8 @@ import { BrowserRouter } from 'react-router-dom';
 import {Route, Switch} from "react-router-dom";
 
 import Logincust from './component/Logincust';
-import Loginw from './component/Loginw';
-import Signupw from './component/Signupw';
+import Loginworker from './component/Loginworker';
+import Signupworker from './component/Signupworker';
 import Signupcust from './component/Signupcust';
 import Getservice from './component/Getservice';
 import Loginpg from './component/Loginpg';
@@ -28,12 +28,12 @@ ReactDOM.render(
    
    <Switch>
      <Route exact path="/" component={Home}/>
-     <Route exact path="/Service" component={services}/>
+     <Route exact path="/Services" component={services}/>
      <Route path="/Logincust" component={Logincust}/>
-     <Route path="/Loginworker" component={Loginw}/>
+     <Route path="/Loginworker" component={Loginworker}/>
      <Route exact path="/loginpg" component={Loginpg}/>
      <Route exact path="/Account" component={Account}/>
-     <Route exact path="/Signupworker" component={Signupw}/>
+     <Route exact path="/Signupworker" component={Signupworker}/>
      <Route path="/Signupcust" component={Signupcust}/>
      <Route path="/get_service" component={Getservice}/>
      <Route path="/Profile" component={Profile}/>

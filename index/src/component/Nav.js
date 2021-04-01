@@ -62,7 +62,7 @@ class Nav extends React.Component{
        <Link class="nav-link" to="/">HOME</Link>
      </li>
      <li class="nav-item">
-       <Link class="nav-link" to="/Service">SERVICES</Link>
+       <Link class="nav-link" to="/Services">SERVICES</Link>
      </li>
      <li class="nav-item">
        <Link class="nav-link" to="/About">ABOUT</Link>
@@ -74,7 +74,7 @@ class Nav extends React.Component{
      <ul class="navbar-nav ml-auto">
          
      <li class="nav-item">
-       <Link class="nav-link" to="/Loginpg">Login</Link>
+       <Link class="nav-link" to="/Loginpg">LOGIN</Link>
      </li>
      
    </ul>
