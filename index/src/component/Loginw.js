@@ -48,8 +48,8 @@ class Loginw extends React.Component{
        console.log(login);
        if(login===true)
        {
-       sessionStorage.setItem("Email",json.prof);
-       console.log(sessionStorage.Email);
+       sessionStorage.setItem("id",json.prof);
+       console.log(sessionStorage.id);
        sessionStorage.setItem("job","worker");
        alert("you are login successfully...");
        }
@@ -63,10 +63,10 @@ class Loginw extends React.Component{
     }
 
     render(){
-      var prof=sessionStorage.Email;
+      var id=sessionStorage.id;
        
-       console.log(prof);
-        if(this.state.login || prof)
+       console.log(id);
+        if(this.state.login || id)
         {  
             return(
                 <div>

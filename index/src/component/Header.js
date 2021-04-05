@@ -3,6 +3,7 @@ import {Jumbotron,Container,Button} from "reactstrap";
 import {Link} from "react-router-dom";
 import './header.css';
 const Header=()=>{
+    var x=sessionStorage.job;
 return(
     <div>
         <Jumbotron className="text-center">
@@ -13,11 +14,11 @@ return(
             </p>
         
         <Container>
-        <Link  className="button" to="/get_service" style={{textDecoration:"none" }} >
+        {x!=="worker"?<Link  className="button" to="/get_service" style={{textDecoration:"none" }} >
         <Button color="info" outline className="but" >
         BOOK NOW
         </Button>
-        </Link> 
+        </Link> : <p></p>}
         
         </Container>
         </Jumbotron>

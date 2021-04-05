@@ -19,10 +19,12 @@ import Profile from './component/Profile';
 import Logout from './component/Logout';
 import Mybooking from './component/Mybooking';
 import services from  './component/services'
+import Nav1 from './component/nav1';
+import ChangeProfile from './component/ChangeProfile';
+import Order from './component/Order';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-  
     <Nav/>
     
    
@@ -38,7 +40,9 @@ ReactDOM.render(
      <Route path="/get_service" component={Getservice}/>
      <Route path="/Profile" component={Profile}/>
      <Route path="/Logout" component={Logout}/>
-     <Route path="/mybookings" component={Mybooking}/>
+     <Route path="/Mybooking" component={Mybooking}/>
+     <Route path ="/changeProfile" component={ChangeProfile}/>
+     <Route path="/Order" component={Order}/>
    </Switch>
    
     </BrowserRouter>

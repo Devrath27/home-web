@@ -17,7 +17,7 @@ class Profile extends React.Component{
     }
     get() {
         var profile={
-            email:sessionStorage.Email,
+            id:sessionStorage.id,
             stat:sessionStorage.job
            }
            fetch('http://localhost:8080/Profile', {
@@ -76,6 +76,7 @@ class Profile extends React.Component{
   </tr>
   
 </table>
+<Link to="/changeProfile">CHANGE PROFILE</Link>
        </div>
    )
   }

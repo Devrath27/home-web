@@ -40,10 +40,10 @@ class Getservice extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        var email=sessionStorage.Email;
+        var id=sessionStorage.id;
         console.log(this.state);
         var mybook ={
-            email:email,
+            id:id,
             serviceType : this.state.serviceType,
             problem : this.state.problem,
              location:this.state.location,
@@ -80,7 +80,7 @@ class Getservice extends React.Component{
     
 
     render(){
-      var prof=sessionStorage.Email;
+      var prof=sessionStorage.id;
        
        console.log(prof);
         if(!prof)

@@ -77,8 +77,8 @@ class Signupw extends React.Component{
        console.log(login);
        if(login===true)
        {
-       sessionStorage.setItem("Email",json.prof);
-       console.log(sessionStorage.Email);
+       sessionStorage.setItem("id",json.prof);
+       console.log(sessionStorage.id);
        sessionStorage.setItem("job","worker");
        alert("you are resistred successfully...")
        }
@@ -94,7 +94,7 @@ class Signupw extends React.Component{
     
 
     render() {
-      var prof=sessionStorage.Email;
+      var prof=sessionStorage.id;
        
        console.log(prof);
         if(this.state.login || prof)
