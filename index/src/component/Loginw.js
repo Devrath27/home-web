@@ -1,18 +1,17 @@
-import React from 'react'
-import Login from './Login.css';
+import './Login.css';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {Link} from "react-router-dom";
-import './Signupcust.css'
-class Signupcust extends React.Component{
+import {BrowserRouter} from 'react-router-dom'; 
+import {Route, Switch} from "react-router-dom";
+
+class Loginw extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            name:'',
-            email: '',
-            cityName:'',
-            contact: null,
             login:false,
-            password: '',
-           
+            email: '',
+            password: ''
                     };
                     this.myChangeHandler=this.myChangeHandler.bind(this);
                     this.mySubmitHandler=this.mySubmitHandler.bind(this);
@@ -20,26 +19,22 @@ class Signupcust extends React.Component{
     myChangeHandler=(event) =>{
         let num=event.target.name;
         let val=event.target.value;
-        this.setState({[num]: val});
+        this.setState({[num]:val});
+        
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
         
         console.log(this.state);
-
-        var signupcust ={
-            name : this.state.name,
+        var loginworker ={
+           
             email : this.state.email,
-            cityName:this.state.cityName,
-            contact:this.state.contact,
-            password:this.state.password,
-            
-    
-          };
-          fetch('http://localhost:8080/Signupcust', {
+             password:this.state.password
+           };
+          fetch('http://localhost:8080/Loginworker', {
           method: 'post',
           body : JSON.stringify({
-            signupcust
+            loginworker
           }),
           headers: {
             'Accept': 'application/json',
@@ -47,7 +42,6 @@ class Signupcust extends React.Component{
           }
         }).then((res) => res.json())
      .then((json) => {
-       //console.log(json.mes);
        console.log(json.mes);
        this.setState({login:json.mes});
        var login=this.state.login;
@@ -55,9 +49,9 @@ class Signupcust extends React.Component{
        if(login===true)
        {
        sessionStorage.setItem("id",json.prof);
-       sessionStorage.setItem("job","custm");
        console.log(sessionStorage.id);
-       alert("you are resistred successfully...");
+       sessionStorage.setItem("job","worker");
+       alert("you are login successfully...");
        }
        else
        alert(json.prof);
@@ -65,63 +59,58 @@ class Signupcust extends React.Component{
      .catch((error) => {
        console.error(error);
      });
+
     }
 
     render(){
-      var prof=sessionStorage.id;
+      var id=sessionStorage.id;
        
-       console.log(prof);
-        if(this.state.login || prof)
+       console.log(id);
+        if(this.state.login || id)
         {  
             return(
                 <div>
-                    <h1>you are resistred succesfully</h1>
+                    <h1>you are logedin successfully</h1>
                 </div>
             )
         }
         else{
         return( 
-            
           <div >
-          <h2 style={{fontWeight:"bold",color:"Red",textAlign:"center",marginTop:"70px"}}>For Customer</h2>
+          <h2 style={{fontWeight:"bold",color:"Red",textAlign:"center",marginTop:"70px"}}>For Worker</h2>
           <h6 style={{textAlign:"center"}}>Book Services,get Services and Enjoy Services</h6>
-     <div className="form2 "> 
+     <div className="form "> 
      <div className="text-center"> 
-         <h4 style={{marginTop:"10px"}}>Sign Up</h4>
+         <h4 style={{marginTop:"10px"}}>Login</h4>
          </div>       
                             
                  <div className="form-element">
-                 <form onSubmit={this.mySubmitHandler}>
-                 <div class="input"><input type='text' name='name' placeholder="Name" 
-         onChange={this.myChangeHandler}></input>
-         </div>
-         <div class="input"><input type='contact' name='contact' placeholder="Contact" 
-         onChange={this.myChangeHandler}></input>
-         </div>
-         <div class="input"><input type='text' name='cityName' placeholder="city" 
-         onChange={this.myChangeHandler}></input>
-         </div>
+                 <form onSubmit={this.mySubmitHandler} >
                  <div class="input"><input type='email' name='email' placeholder="Email" 
          onChange={this.myChangeHandler}></input>
          </div>
-         <div class="input"><input type='password' name='password' placeholder="Password"            
+         <div class="input eye"><input type='password' name='password' placeholder="Password"            
           onChange={this.myChangeHandler}
          ></input>
-         </div>
-         <div class="input "><input className="Signupcust" type="submit" value="Sign Up"></input>
-         </div>
-         
       
+
+         
+         </div>
+         <div class="input "><input className="logincust" type="submit" value="Login"></input>
+         </div>
+         <Link style={{float:"right",marginTop:"25px",marginRight:"10px"}} to="/forgotpass">forgot password
+         </Link>
                      </form>
-                     <p class="para1">Already an account? <Link  to="/Logincust" style={{textDecoration:"none"}} >Login</Link></p>
+                     <p class="para2">Don't have an account? <Link  to="/Signupworker" style={{textDecoration:"none"}} >Sign Up</Link></p>
                  </div>
              </div>
                   
                                     </div>
-
         );
         
     }
-}
-}
-export default Signupcust;
+}}
+export default Loginw;
+
+
+

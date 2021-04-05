@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 import {BrowserRouter} from 'react-router-dom'; 
 import {Route, Switch} from "react-router-dom";
 //import { Card } from 'reactstrap';
-import Carde from './Card'
-class Mybooking extends  React.Component{
+import Ocard from './Ocard';
+class Order extends  React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -25,7 +25,7 @@ componentDidMount(){
     id:sessionStorage.id,
     stat:sessionStorage.job
     }
-        fetch('http://localhost:8080/Mybooking', {
+        fetch('http://localhost:8080/Order', {
             method: 'post',
             body : JSON.stringify({
               booking
@@ -49,14 +49,16 @@ componentDidMount(){
        
     }
     CreateCard=(book)=>{
+        console.log(book._id);
         return(
-            <Carde
-            key={book._id}
-            serviceType={book.serviceType}
-            problem={book.problem}
-            location={book.location}
-            time={book.date}
-            status={book.status}
+            <Ocard
+            book={book}
+            // key={book._id}
+            // serviceType={book.serviceType}
+            // problem={book.problem}
+            // location={book.location}
+            // time={book.date}
+            // status={book.status}
             />
         );
     }
@@ -64,30 +66,33 @@ componentDidMount(){
     
     render(){
      
-     
+     if(this.state.books.length===0)
+     {
+         return <h1>currently no orders</h1>
+     }
+     else {
         return(
-            
-                <table>
+            <table>
                 <tr>
               <th>service type</th>
               <th>problem</th>
               <th>time</th>
               <th>location</th>
-              <th>status</th>
+              <th>accept</th>
+              <th>decline</th>
                 </tr>
-                
                 {this.state.books.map(book => {
+                    console.log(book._id);
                 return this.CreateCard(book)
             })
                 
         }  
-        </table>
-            
+           </table>
         )
     }
-   
 }
-       export default Mybooking;
+}
+       export default Order;
        
      
      

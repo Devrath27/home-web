@@ -51,11 +51,10 @@ class Logincust extends React.Component{
        console.log(login);
        if(login===true)
        {
-       sessionStorage.setItem("Email",json.prof);
-       console.log(sessionStorage.Email);
+       sessionStorage.setItem("id",json.prof);
+       console.log(sessionStorage.id);
        sessionStorage.setItem("job","custm");
-      
-       alert("yoy are login successfully...");
+       alert("you are login successfully...");
        }
        else
        alert(json.prof);
@@ -68,10 +67,10 @@ class Logincust extends React.Component{
     
     render(){
         //var login=this.state.login;
-        var prof=sessionStorage.Email;
+        var id=sessionStorage.id;
        
-       console.log(prof);
-        if(this.state.login || prof)
+       console.log(id);
+        if(this.state.login || id)
         {  
             return(
                 <div>

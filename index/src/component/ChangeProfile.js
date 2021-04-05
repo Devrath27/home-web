@@ -2,7 +2,7 @@ import React from 'react'
 import Login from './Login.css';
 import {Link} from "react-router-dom";
 import './Signupcust.css'
-class Signupcust extends React.Component{
+class ChangeProfile extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -11,7 +11,8 @@ class Signupcust extends React.Component{
             cityName:'',
             contact: null,
             login:false,
-            password: '',
+            
+
            
                     };
                     this.myChangeHandler=this.myChangeHandler.bind(this);
@@ -26,20 +27,25 @@ class Signupcust extends React.Component{
         event.preventDefault();
         
         console.log(this.state);
-
-        var signupcust ={
+        
+        //console.log(job);
+       var job =sessionStorage.job;
+     var id=sessionStorage.id;
+     console.log(job);
+     console.log(id);
+        var changeProfile ={
+          id: id,
             name : this.state.name,
             email : this.state.email,
-            cityName:this.state.cityName,
-            contact:this.state.contact,
-            password:this.state.password,
-            
+            cityName: this.state.cityName,
+            contact: this.state.contact,
+            job : job
     
           };
-          fetch('http://localhost:8080/Signupcust', {
+          fetch('http://localhost:8080/changeProfile', {
           method: 'post',
           body : JSON.stringify({
-            signupcust
+            changeProfile
           }),
           headers: {
             'Accept': 'application/json',
@@ -48,19 +54,7 @@ class Signupcust extends React.Component{
         }).then((res) => res.json())
      .then((json) => {
        //console.log(json.mes);
-       console.log(json.mes);
-       this.setState({login:json.mes});
-       var login=this.state.login;
-       console.log(login);
-       if(login===true)
-       {
-       sessionStorage.setItem("id",json.prof);
-       sessionStorage.setItem("job","custm");
-       console.log(sessionStorage.id);
-       alert("you are resistred successfully...");
-       }
-       else
-       alert(json.prof);
+       alert("you are change your profile successfully::");
      })
      .catch((error) => {
        console.error(error);
@@ -68,26 +62,18 @@ class Signupcust extends React.Component{
     }
 
     render(){
-      var prof=sessionStorage.id;
+      var prof=sessionStorage.Email;
        
        console.log(prof);
-        if(this.state.login || prof)
-        {  
-            return(
-                <div>
-                    <h1>you are resistred succesfully</h1>
-                </div>
-            )
-        }
-        else{
+       
         return( 
             
           <div >
-          <h2 style={{fontWeight:"bold",color:"Red",textAlign:"center",marginTop:"70px"}}>For Customer</h2>
-          <h6 style={{textAlign:"center"}}>Book Services,get Services and Enjoy Services</h6>
+         
+         
      <div className="form2 "> 
      <div className="text-center"> 
-         <h4 style={{marginTop:"10px"}}>Sign Up</h4>
+         <h4 style={{marginTop:"10px"}}>change profile</h4>
          </div>       
                             
                  <div className="form-element">
@@ -98,22 +84,18 @@ class Signupcust extends React.Component{
          <div class="input"><input type='contact' name='contact' placeholder="Contact" 
          onChange={this.myChangeHandler}></input>
          </div>
-         <div class="input"><input type='text' name='cityName' placeholder="city" 
-         onChange={this.myChangeHandler}></input>
-         </div>
                  <div class="input"><input type='email' name='email' placeholder="Email" 
          onChange={this.myChangeHandler}></input>
          </div>
-         <div class="input"><input type='password' name='password' placeholder="Password"            
-          onChange={this.myChangeHandler}
-         ></input>
+         <div class="input"><input type='text' name='cityName' placeholder="city" 
+         onChange={this.myChangeHandler}></input>
          </div>
-         <div class="input "><input className="Signupcust" type="submit" value="Sign Up"></input>
+         <div class="input "><input className="Signupcust" type="submit" value="CHANGE PROFILE" ></input>
          </div>
          
       
                      </form>
-                     <p class="para1">Already an account? <Link  to="/Logincust" style={{textDecoration:"none"}} >Login</Link></p>
+                    
                  </div>
              </div>
                   
@@ -123,5 +105,5 @@ class Signupcust extends React.Component{
         
     }
 }
-}
-export default Signupcust;
+
+export default ChangeProfile;

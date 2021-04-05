@@ -1,8 +1,7 @@
 import React from 'react'
 import Login from './Login.css';
-import {Link} from "react-router-dom";
-import './Signupcust.css'
-class Signupcust extends React.Component{
+import {Link} from 'react-router-dom'
+class Signupw extends React.Component{
     constructor(props){
         super(props);
         this.state={
@@ -10,13 +9,34 @@ class Signupcust extends React.Component{
             email: '',
             cityName:'',
             contact: null,
+            serviceType:'',
             login:false,
             password: '',
+            longitude:'',
+            latitude:''
            
                     };
                     this.myChangeHandler=this.myChangeHandler.bind(this);
                     this.mySubmitHandler=this.mySubmitHandler.bind(this);
+                    this.getAddress=this.getAddress.bind(this);
+                    this.showPosition=this.showPosition.bind(this);
+                    this.getAddress();
+                    
     }
+    getAddress(){
+        if(navigator.geolocation){
+          navigator.geolocation.getCurrentPosition(this.showPosition);
+        }
+        return;
+      }
+      showPosition(position){
+       
+        var latitude=position.coords.latitude;
+       var longitude= position.coords.longitude;
+        this.setState({latitude :latitude });
+            this.setState({longitude :longitude});
+         
+      }
     myChangeHandler=(event) =>{
         let num=event.target.name;
         let val=event.target.value;
@@ -24,22 +44,26 @@ class Signupcust extends React.Component{
     }
     mySubmitHandler = (event) => {
         event.preventDefault();
-        
+       
         console.log(this.state);
 
-        var signupcust ={
+
+        var signupworker ={
             name : this.state.name,
             email : this.state.email,
             cityName:this.state.cityName,
             contact:this.state.contact,
+            serviceType:this.state.serviceType,
             password:this.state.password,
+            latitude:this.latitude,
+            longitude:this.longitude
             
     
           };
-          fetch('http://localhost:8080/Signupcust', {
+          fetch('http://localhost:8080/Signupworker', {
           method: 'post',
           body : JSON.stringify({
-            signupcust
+            signupworker
           }),
           headers: {
             'Accept': 'application/json',
@@ -47,7 +71,6 @@ class Signupcust extends React.Component{
           }
         }).then((res) => res.json())
      .then((json) => {
-       //console.log(json.mes);
        console.log(json.mes);
        this.setState({login:json.mes});
        var login=this.state.login;
@@ -55,9 +78,9 @@ class Signupcust extends React.Component{
        if(login===true)
        {
        sessionStorage.setItem("id",json.prof);
-       sessionStorage.setItem("job","custm");
        console.log(sessionStorage.id);
-       alert("you are resistred successfully...");
+       sessionStorage.setItem("job","worker");
+       alert("you are resistred successfully...")
        }
        else
        alert(json.prof);
@@ -65,9 +88,12 @@ class Signupcust extends React.Component{
      .catch((error) => {
        console.error(error);
      });
-    }
+   }
+   
 
-    render(){
+    
+
+    render() {
       var prof=sessionStorage.id;
        
        console.log(prof);
@@ -83,7 +109,7 @@ class Signupcust extends React.Component{
         return( 
             
           <div >
-          <h2 style={{fontWeight:"bold",color:"Red",textAlign:"center",marginTop:"70px"}}>For Customer</h2>
+          <h2 style={{fontWeight:"bold",color:"Red",textAlign:"center",marginTop:"70px"}}>For Worker</h2>
           <h6 style={{textAlign:"center"}}>Book Services,get Services and Enjoy Services</h6>
      <div className="form2 "> 
      <div className="text-center"> 
@@ -101,6 +127,22 @@ class Signupcust extends React.Component{
          <div class="input"><input type='text' name='cityName' placeholder="city" 
          onChange={this.myChangeHandler}></input>
          </div>
+         <div class="input">
+        
+         <label>service type:</label>
+         <select  name='serviceType'  onChange={this.myChangeHandler} >
+             <option value="doctor">doctor</option>
+             <option value="barber">barber</option>
+             <option value="s">s</option>
+             <option value ="m">m</option>
+             <option value ="ce">ce</option>
+             <option value ="arci">arci</option>
+             <option value ="pcm">pcm</option>
+             <option value ="others">others</option>
+         </select>
+         
+
+         </div>
                  <div class="input"><input type='email' name='email' placeholder="Email" 
          onChange={this.myChangeHandler}></input>
          </div>
@@ -113,7 +155,7 @@ class Signupcust extends React.Component{
          
       
                      </form>
-                     <p class="para1">Already an account? <Link  to="/Logincust" style={{textDecoration:"none"}} >Login</Link></p>
+                     <p class="para1">Already an account? <Link  to="/Loginworker" style={{textDecoration:"none"}} >Login</Link></p>
                  </div>
              </div>
                   
@@ -122,6 +164,5 @@ class Signupcust extends React.Component{
         );
         
     }
-}
-}
-export default Signupcust;
+}}
+export default Signupw;

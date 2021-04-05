@@ -14,15 +14,15 @@ function Account() {
           <li className="ll" >
             <Link class="al1" to="/Profile">PROFILE</Link>
           </li>
+         
           <li className="ll">
-            <Link class="al1" to="#">khatam</Link>
+            <Link class="al1" to="/Mybooking">my bookings</Link>
           </li>
-          <li className="ll">
-            <Link class="al1" to="/mybookings">my bookings</Link>
-          </li>
+          
           <li  className="ll">
             <Link class="al1" to="/Logout"  >Logout</Link>
           </li>
+         
         </ul>
             
         );

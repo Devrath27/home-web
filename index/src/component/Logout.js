@@ -9,8 +9,8 @@ class Logout extends React.Component{
                     this.get=this.get.bind(this);
     }
     get=(event)=>{
-        sessionStorage.removeItem("Email");
-        
+        sessionStorage.removeItem("id");
+        sessionStorage.removeItem("job");
     }
     render(){
 return(
