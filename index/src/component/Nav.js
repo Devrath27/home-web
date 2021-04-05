@@ -42,7 +42,7 @@ this.setState({
   <ul class="navbar-nav ml-auto">
       
   <li class="nav-item">
-    <Link class="nav-link" to="/Account" >Account</Link>
+    <Link class="nav-link" to="/Account" >ACCOUNT</Link>
   </li>
   
 </ul>
