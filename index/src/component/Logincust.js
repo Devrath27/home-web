@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import {Link} from "react-router-dom";
 import {BrowserRouter} from 'react-router-dom'; 
 import {Route, Switch} from "react-router-dom";
+import Nav from "./Nav";
 
 class Logincust extends React.Component{
     constructor(props){
@@ -53,6 +54,7 @@ class Logincust extends React.Component{
        sessionStorage.setItem("Email",json.prof);
        console.log(sessionStorage.Email);
        sessionStorage.setItem("job","custm");
+      
        alert("yoy are login successfully...");
        }
        else
@@ -92,7 +94,7 @@ class Logincust extends React.Component{
                  <div class="input"><input type='email' name='email' placeholder="Email" 
          onChange={this.myChangeHandler}></input>
          </div>
-         <div class="input eye"><input type='password' name='password' placeholder="Password"            
+         <div class="input "><input type='password' name='password' placeholder="Password"            
           onChange={this.myChangeHandler}
          ></input>
       
