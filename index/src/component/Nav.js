@@ -1,5 +1,5 @@
 import './nav.css';
-import React from 'react';
+import React,{useS} from 'react';
 import ReactDOM from 'react-dom';
 import {Link} from "react-router-dom";
 import {BrowserRouter} from 'react-router-dom'; 
@@ -38,7 +38,7 @@ render(){
     <Link class="nav-link" to="/">HOME</Link>
   </li>
   <li class="nav-item">
-    <Link class="nav-link" to="/Service">SERVICES</Link>
+    <Link class="nav-link" to="/Services">SERVICES</Link>
   </li>
   {x=="worker" ?  <li class="nav-item">
    <Link class="nav-link" to="/Order">CURRENT ORDER</Link> 
