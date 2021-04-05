@@ -6,7 +6,7 @@ import App from './component/App';
 import Nav from './component/Nav';
 import Home from './component/Home';
 import { BrowserRouter } from 'react-router-dom';
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch,Router} from "react-router-dom";
 
 import Logincust from './component/Logincust';
 import Loginworker from './component/Loginworker';

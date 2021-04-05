@@ -34,29 +34,39 @@ import {
     Col,
 } from "reactstrap";
 const Services=()=>{
+    const service=[
+        { src:electrical, title:"ELECTRICAL", text:"For electrical related issue"},
+
+    {src:doctor, title:"DOCTOR" , text:"For health related issue"},
+    {src:barber, title:"BARBER" , text:"For Hair cutting and facial grooming"},
+
+     {src:mechanics ,title:"MECHANICS" ,text:"For vehicle related issue"},
+     {src:vwas, title:"VEHICLE CLEANER", text:"For cleaning of vehicle"},
+     {src:cleaner ,title:"HOUSE CLEANER" ,text:"For home cleaning related services"},
+     {src:carpenter, title:"CARPENTER" ,text:"For furniture related issue"},
+     {src:photographer, title:"PHOTOGRAPHER", text:"For photo and video shooting"},
+     {src:painter ,title:"PAINTER", text:"For painting purposes"},
+     {src:plumber, title:"PLUMBER", text:"For repairing water pipes and toilet etc."},
+    {src:mason, title:"MASON", text:"For build home"},
+     {src:laundary, title:"LAUNDARY" ,text:"For health related issue"},
+     {src:tv, title:"TV", text:"For repairing tv and dish antena"},
+     {src:cctv ,title:"CCTV" ,text:"For repairing and setting cctv"},
+     {src:rentcar ,title:"RENT CAR", text:"Rent car for some period of time"},
+     {src:gardener, title:"GARDENER" ,text:"For cleaning garden and planting trees"}
+
+
+
+        
+    ]
+    const id=service.map(ids => (<Cards src={ids.src} title={ids.title} text={ids.text}/>))
     return(
     <div>
         <Header/>
         <div className="ser">
      
 <Row>
-    <Cards src={electrical} title="ELECTRICAL" text="For electrical related issue"/>
-    <Cards src={doctor} title="DOCTOR" text="For health related issue"/>
-    <Cards src={barber} title="BARBER" text="For hair cutting and facial grooming"/>
-    <Cards src={mechanics} title="MECHANICS" text="For vehicle related issue"/>
-    <Cards src={vwas} title="VEHICLE CLEANER" text="For cleaning of vehicle"/>
-    <Cards src={cleaner} title="HOUSE CLEANER" text="For home cleaning related services"/>
-    <Cards src={carpenter} title="CARPENTER" text="For furniture related issue"/>
-    <Cards src={photographer} title="PHOTOGRAPHER" text="For photo and video shooting"/>
-    <Cards src={painter} title="PAINTER" text="For painting purposes"/>
-    <Cards src={plumber} title="PLUMBER" text="For repairing water pipes and toilet etc."/>
-    <Cards src={mason} title="MASON" text="For build home"/>
-    <Cards src={laundary} title="LAUNDARY" text="For health related issue"/>
-    <Cards src={tv} title="TV" text="For repairing tv and dish antena"/>
-    <Cards src={cctv} title="CCTV" text="For repairing and setting cctv"/>
-    <Cards src={rentcar} title="RENT CAR" text="Rent car for some period of time"/>
-    <Cards src={gardener} title="GARDENER" text="For cleaning garden and planting trees"/>
-
+    {id}
+    
 </Row>
 
 </div>

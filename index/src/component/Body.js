@@ -22,14 +22,19 @@ import {
 } from "reactstrap";
 import Cards from "./Cards";
 const body=()=>{
+    const service=[
+        { src:electrical, title:"ELECTRICAL", text:"For electrical related issue"},
+
+    {src:doctor, title:"DOCTOR" , text:"For health related issue"},
+    {src:barber, title:"BARBER" , text:"For Hair cutting and facial grooming"},
+
+     {src:mechanics ,title:"MECHANICS" ,text:"For vehicle related issue"}]
+     const id=service.map(ids => (<Cards src={ids.src} title={ids.title} text={ids.text}/>))
 return(
     <div className="ser">
             
 <Row>
-<Cards src={electrical} title="ELECTRICAL" text="For electrical related issue"/>
-    <Cards src={doctor} title="DOCTOR" text="For health related issue"/>
-    <Cards src={barber} title="BARBER" text="For health related issue"/>
-    <Cards src={mechanics} title="MECHANICS" text="For health related issue"/>
+    {id}
 </Row>
 <Container className="text-center">
 <Link  className="button" to="/Services" style={{textDecoration:"none" }} >
