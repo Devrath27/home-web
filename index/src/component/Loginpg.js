@@ -9,7 +9,7 @@ import './Login.css';
 
 function Loginpg() {
     return(
-        <div>
+        <div >
             <h1 style={{marginTop:"50px",marginLeft:"15px"}}>Login »</h1>
             <div class="login">
                 <h2>
