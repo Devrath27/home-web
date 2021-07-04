@@ -22,7 +22,7 @@ class Ocard extends  React.Component{
             revew:y
         }
        
-        fetch('http://localhost:8080/accept', {
+        fetch('https://service-4u.herokuapp.com/accept', {
             method: 'post',
             body : JSON.stringify({
               Accept

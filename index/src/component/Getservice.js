@@ -55,7 +55,7 @@ class Getservice extends React.Component{
           };
           console.log(mybook);
 
-          fetch('http://localhost:8080/get_service', {
+          fetch('https://service-4u.herokuapp.com/get_service', {
           method: 'post',
           body : JSON.stringify({
             mybook

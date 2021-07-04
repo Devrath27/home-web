@@ -40,7 +40,7 @@ class Cardes extends React.Component{
             job : job
     
           };
-          fetch('http://localhost:8080/changeProfile', {
+          fetch('https://service-4u.herokuapp.com/changeProfile', {
           method: 'post',
           body : JSON.stringify({
             changeProfile

@@ -34,7 +34,7 @@ class Logincust extends React.Component{
             email : this.state.email,
              password:this.state.password
            };
-          fetch('http://localhost:8080/Logincust', {
+          fetch('https://service-4u.herokuapp.com/Logincust', {
           method: 'post',
           body : JSON.stringify({
             logincust
