@@ -30,7 +30,7 @@ ReactDOM.render(
     
    
    <Switch>
-     <Route exact path="/" component={Home}/>
+     <Route exact path="home-web/" component={Home}/>
      <Route exact path="/Services" component={services}/>
      <Route path="/Logincust" component={Logincust}/>
      <Route path="/Loginworker" component={Loginworker}/>
