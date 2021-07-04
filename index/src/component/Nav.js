@@ -35,7 +35,7 @@ render(){
 <ul class="navbar-nav">
   <li class="app"><App/></li>
   <li class="nav-item" >
-    <Link class="nav-link" to="/">HOME</Link>
+    <Link class="nav-link" to="/home-web">HOME</Link>
   </li>
   <li class="nav-item">
     <Link class="nav-link" to="/Services">SERVICES</Link>
