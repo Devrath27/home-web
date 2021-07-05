@@ -20,7 +20,7 @@ class Profile extends React.Component{
             id:sessionStorage.id,
             stat:sessionStorage.job
            }
-           fetch('http://localhost:8080/Profile', {
+           fetch('https://service-4u.herokuapp.com/Profile', {
                method: 'post',
                body : JSON.stringify({
                  profile

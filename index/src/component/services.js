@@ -35,12 +35,12 @@ import {
 } from "reactstrap";
 const Services=()=>{
     const service=[
-        { src:electrical, title:"ELECTRICAL", text:"For electrical related issue"},
+        { src:electrical, title:"ELECTRICIAN", text:"For electrical related issue"},
 
     {src:doctor, title:"DOCTOR" , text:"For health related issue"},
     {src:barber, title:"BARBER" , text:"For Hair cutting and facial grooming"},
 
-     {src:mechanics ,title:"MECHANICS" ,text:"For vehicle related issue"},
+     {src:mechanics ,title:"MECHANIC" ,text:"For vehicle related issue"},
      {src:vwas, title:"VEHICLE CLEANER", text:"For cleaning of vehicle"},
      {src:cleaner ,title:"HOUSE CLEANER" ,text:"For home cleaning related services"},
      {src:carpenter, title:"CARPENTER" ,text:"For furniture related issue"},

@@ -1,4 +1,5 @@
 import React from 'react';
+import Cardes from './Cardes';
 import{
     Card,
     CardBody,
@@ -15,6 +16,7 @@ import{
 import {Link} from "react-router-dom";
 import {BrowserRouter} from 'react-router-dom'; 
 import {Route, Switch} from "react-router-dom";
+
 const Cards=(props)=>{
     return(
 <Col md={3}>
@@ -29,8 +31,8 @@ const Cards=(props)=>{
         
         <CardText >{props.text}</CardText>
         <Container className="text-center">
-        <Link  className="button"  style={{textDecoration:"none" }} >
-        <Button color="info" outline className="" >
+        <Link  className="button"  style={{textDecoration:"none" }} to="/KnowMore">
+        <Button color="info" outline className=""  >
         Know More
         </Button>
         </Link>

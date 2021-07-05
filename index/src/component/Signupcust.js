@@ -36,7 +36,7 @@ class Signupcust extends React.Component{
             
     
           };
-          fetch('http://localhost:8080/Signupcust', {
+          fetch('https://service-4u.herokuapp.com/Signupcust', {
           method: 'post',
           body : JSON.stringify({
             signupcust

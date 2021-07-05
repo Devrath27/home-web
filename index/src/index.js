@@ -22,6 +22,7 @@ import services from  './component/services'
 import Nav1 from './component/nav1';
 import ChangeProfile from './component/ChangeProfile';
 import Order from './component/Order';
+import Cardes from './component/Cardes';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -29,7 +30,7 @@ ReactDOM.render(
     
    
    <Switch>
-     <Route exact path="/" component={Home}/>
+     <Route exact path="/home-web/" component={Home}/>
      <Route exact path="/Services" component={services}/>
      <Route path="/Logincust" component={Logincust}/>
      <Route path="/Loginworker" component={Loginworker}/>
@@ -43,6 +44,7 @@ ReactDOM.render(
      <Route path="/Mybooking" component={Mybooking}/>
      <Route path ="/changeProfile" component={ChangeProfile}/>
      <Route path="/Order" component={Order}/>
+     <Route path="/KnowMore" component={Cardes}/>
    </Switch>
    
     </BrowserRouter>

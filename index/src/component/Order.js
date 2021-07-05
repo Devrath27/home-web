@@ -25,7 +25,7 @@ componentDidMount(){
     id:sessionStorage.id,
     stat:sessionStorage.job
     }
-        fetch('http://localhost:8080/Order', {
+        fetch('https://service-4u.herokuapp.com/Order', {
             method: 'post',
             body : JSON.stringify({
               booking

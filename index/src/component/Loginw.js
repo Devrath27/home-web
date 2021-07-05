@@ -31,7 +31,7 @@ class Loginw extends React.Component{
             email : this.state.email,
              password:this.state.password
            };
-          fetch('http://localhost:8080/Loginworker', {
+          fetch('https://service-4u.herokuapp.com/Loginworker', {
           method: 'post',
           body : JSON.stringify({
             loginworker

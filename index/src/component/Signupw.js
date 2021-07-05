@@ -60,7 +60,7 @@ class Signupw extends React.Component{
             
     
           };
-          fetch('http://localhost:8080/Signupworker', {
+          fetch('https://service-4u.herokuapp.com/Signupworker', {
           method: 'post',
           body : JSON.stringify({
             signupworker
