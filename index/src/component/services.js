@@ -20,6 +20,7 @@ import tv from '../images/tv.jpg';
 import cctv from '../images/cctv.jpg';
 //import "./barber.css";
 import Cards from "./Cards";
+import {Link} from "react-router-dom";
 import {
     Card,
     CardBody,
@@ -70,6 +71,13 @@ const Services=()=>{
 </Row>
 
 </div>
+<Container className="text-center">
+<Link  className="button" to="/home-web" style={{textDecoration:"none" }} >
+        <Button color="info" outline className="but" >
+        See less
+        </Button>
+        </Link>
+        </Container>
 </div>
     );
 }

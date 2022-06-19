@@ -23,6 +23,7 @@ import Nav1 from './component/nav1';
 import ChangeProfile from './component/ChangeProfile';
 import Order from './component/Order';
 import Cardes from './component/Cardes';
+import NotFound from './component/Notfound';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -45,6 +46,7 @@ ReactDOM.render(
      <Route path ="/changeProfile" component={ChangeProfile}/>
      <Route path="/Order" component={Order}/>
      <Route path="/KnowMore" component={Cardes}/>
+     <Route component={NotFound}/>
    </Switch>
    
     </BrowserRouter>

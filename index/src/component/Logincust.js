@@ -74,7 +74,7 @@ class Logincust extends React.Component{
         {  
             return(
                 <div>
-                    <h1>you are logdin succesfully</h1>
+                    <h1>you are logged in succesfully</h1>
                 </div>
             )
         }
